@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import validation from '../Validation/Validation'
+import formStyle from './form.module.css'
 
 
 const Form = ({login}) => {
@@ -29,21 +30,22 @@ const Form = ({login}) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">E-Mail: </label>
-            <input type="text" name="email" value={userData.email} onChange={handleChange}/>
-            {
-                errors.email && <p>{errors.email}</p>
-            }
-            <br />
-            <label htmlFor="password">Contraseña: </label>
-            <input type="text" name="password" value={userData.password} onChange={handleChange}/>
-            {
-                errors.password && <p>{errors.password}</p>
-            }
-
-            <button>Enviar</button>
-        </form>
+        <div className={formStyle.container}>
+            <h1>Iniciar Sesión</h1>
+            <form onSubmit={handleSubmit}>
+                <div className={formStyle.fieldContainer}>
+                    <div className={formStyle.field}>
+                        <input type="text" placeholder='E-Mail' name="email" value={userData.email} onChange={handleChange}/>
+                        {errors.email && <p>{errors.email}</p>}
+                    </div>
+                    <div className={formStyle.field}>
+                        <input type="password" placeholder='Contraseña' name="password" value=   {userData.password} onChange={handleChange}/>
+                        {errors.password && <p>{errors.password}</p>}
+                    </div>
+                </div>
+                <button className={formStyle.buttonContainer}>Enviar</button>
+            </form>
+        </div>
     );
 }
 

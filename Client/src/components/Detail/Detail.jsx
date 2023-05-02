@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import styleDetail from './detail.module.css'
+import { Link } from 'react-router-dom'
 
 // const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
 // const API_KEY = '15899c6807ad.eca327f937a0077dd7be'
@@ -24,14 +26,19 @@ const Detail = () => {
      }, [id]);
 
     return (
-        <div>
-            <h2>{character?.name}</h2>
-            <h2>{character?.species}</h2>
-            <h2>{character?.gender}</h2>
-            <h2>{character?.status}</h2>
-            <h2>{character?.origin?.name}</h2>
-            <img src={character?.image} alt={character?.name} />
-        </div>
+        <Link className={styleDetail.cardContainer} to='/home'>
+            <div className={styleDetail.cardBox}>
+                <img className={styleDetail.cardImg} src={character?.image} alt={character?.name} />
+
+                <div className={styleDetail.cardBody}>
+                    <h1 className={styleDetail.cardTitle}> {character?.name}</h1>
+                    <p className={styleDetail.cardSubTitle}>Especie: {character?.species} </p>
+                    <p className={styleDetail.cardSubTitle}>Género: {character?.gender}</ p>
+                    <p className={styleDetail.cardSubTitle}>Origen: {character?.origin?.name}</ p>
+                    <p className={styleDetail.cardSubTitle}>Estado: {character?.status}</ p>
+                </div>
+            </div>
+        </Link>
     );
 }
 

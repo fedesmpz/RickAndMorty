@@ -1,4 +1,4 @@
-
+import aboutStyle from './about.module.css'
 
 
 const About = () => {

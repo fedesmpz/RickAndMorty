@@ -1,0 +1,84 @@
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cardContainer{
+    width: 100%;
+    height: 100vh;
+    background: #F2BE0755;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardBox{
+    width: 500px;
+    height: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 10px solid #F2BE07;
+    position: relative;
+}
+
+.cardImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cardBody{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    color: #fff;
+    position: absolute;
+    background: #F2BE0730;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.cardBox:hover .cardBody{
+    right: 0;
+}
+
+.cardTitle{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'rickAndMorty';
+    font-size: 100px;
+    font-weight: 500;
+    color: #2C41F2;
+}
+
+.cardSubTitle{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 50px;
+    font-weight: 300;
+    color: #2C41F2;
+}
+
+.cardBtn{
+    color: #2C41F2;
+    background: #13F2CC;
+    width: 50px;
+    margin: 30px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+}

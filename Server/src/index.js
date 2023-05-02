@@ -1,5 +1,5 @@
 const PORT = 3001
-const server = require('./index')
+const server = require('./app')
 
 
 server.listen(PORT, () =>{

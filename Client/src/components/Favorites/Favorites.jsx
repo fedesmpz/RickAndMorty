@@ -2,6 +2,7 @@ import { connect, useDispatch } from "react-redux";
 import Card from "../Card/Card";
 import { filterCards, orderCards } from "../../redux/actions";
 import { useState } from "react";
+import favStyles from './favorites.module.css'
 
 
 
@@ -23,18 +24,22 @@ const Favorites = ({ myFavorites }) => {
     return (
 
         <div>
-            <select onChange={handleOrder}>
-                <option value="A">Ascendente</option>
-                <option value="D">Descendente</option>
-            </select>
-            <select onChange={handleFilter}>
-                <option value="Male">Hombre</option>
-                <option value="Female">Mujer</option>
-                <option value="Genderless">Genero</option>
-                <option value="unknown">Desconocidos</option>
-                <option value="allCharacters">Todos</option>
-            </select>
-            {
+            <div className={favStyles.body}>
+                <div className={favStyles.select}>
+                <select onChange={handleOrder}>
+                    <option value="A">Ascendente</option>
+                    <option value="D">Descendente</option>
+                </select>
+                <select onChange={handleFilter}>
+                    <option value="Male">Hombre</option>
+                    <option value="Female">Mujer</option>
+                    <option value="Genderless">Genero</option>
+                    <option value="unknown">Desconocidos</option>
+                    <option value="allCharacters">Todos</option>
+                </select>
+                </div>
+            </div>
+            <div className={favStyles.cardsContainer}>{
                 myFavorites?.map(fav => {
                     return(
                         <div>
@@ -45,12 +50,13 @@ const Favorites = ({ myFavorites }) => {
                             species={fav.species}
                             gender={fav.gender}
                             image={fav.image}
-                            onClose={fav.onClose}
+                        
                         />
                         </div>
                     )
                 })
             }
+            </div>
             
         </div>
     );

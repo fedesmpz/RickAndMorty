@@ -1,0 +1,51 @@
+.body{
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(70deg, #F26C3855, #F2BE0755);
+}
+
+.select{
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background: #13F2CC;
+    
+}
+
+select{
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    color: black;
+    background: linear-gradient(70deg,  #13F2CC, #1FA5F2);
+    background-image: none;
+    cursor: pointer;
+
+}
+
+
+.select::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #1FA5F2;
+    transition: 0.25s all ease;
+}
+
+
+.cardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+}

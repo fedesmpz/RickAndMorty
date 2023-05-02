@@ -1,0 +1,122 @@
+.container{
+
+    background-color: #20a6f220;
+    height: 100%;
+    min-height: 50vh;
+    width: 50%;
+    min-width: 50vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 2rem;
+    border: solid 10px;
+    border-color: #13F2CC;
+    position: relative;
+
+}
+h1{
+    font-family: 'rickAndMorty';
+    color: #F26C38;
+    font-size: 40px;
+}
+
+form{
+    display: grid;
+}
+
+.buttonContainer{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 90px;
+    background-color: #1FA5F2;
+    border: 5px solid;
+    border-color: #13F2CC;
+    font-family: 'rickAndMorty';
+    color: #2C41F2;
+    border-radius: 200px;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.buttonContainer:hover{
+    transform: scale(120%);
+    cursor: pointer;
+}
+
+.fieldContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh; 
+}
+
+.field{
+    margin: auto auto;
+    /* display: flex; */
+    justify-content: center; 
+    align-items: center;
+    margin: auto auto;
+}
+
+input{
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+input::placeholder{
+    color: #13F2CC;
+}
+
+p{
+    font-size: 20px;
+    color: #1FA5F2; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .container{
+        width: 100%;
+        border: none;
+        border-top: solid 5px;
+        border-bottom: solid 5px;
+        border-radius: none;
+        border-color: #13F2CC;
+    }
+    h1{
+        font-size: 30px;
+    }
+
+    
+}
+
+@media screen and (max-height: 600px){
+    .buttonContainer{
+        bottom: 5%;
+        height: 30px;
+        width: 60px;
+        font-size: 10px;
+    }
+}

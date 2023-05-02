@@ -1,4 +1,4 @@
-import './App.css';
+import appStyle from './App.module.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import { useState, useEffect } from 'react';
@@ -63,12 +63,14 @@ function App() {
 
 
    return (
-      <div className='App'>
+      <div className={appStyle.App}>
+         <div>
          {
             location.pathname !== '/'
             ? <Nav onSearch = {onSearch} access={access} setAccess={setAccess}/>
             : null
          }
+         </div>
 
          <Routes>
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
